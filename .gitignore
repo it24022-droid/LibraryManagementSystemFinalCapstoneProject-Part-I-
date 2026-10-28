@@ -1,0 +1,9 @@
+out/
+data/
+*.class
+.idea/
+*.iml
+report/*.aux
+report/*.log
+report/*.toc
+report/*.out

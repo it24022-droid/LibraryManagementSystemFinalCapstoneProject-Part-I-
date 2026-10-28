@@ -1,0 +1,198 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,booktabs,longtable,array,xcolor,listings,hyperref,float,caption,pgfgantt,enumitem}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,frame=single,backgroundcolor=\color{gray!8}}
+\newcommand{\fig}[3]{\begin{figure}[H]\centering\includegraphics[width=#2]{#1}\caption{#3}\end{figure}}
+
+\title{\textbf{Library Management System}\\[4pt]\large Final Capstone Project Proposal and Prototype (Part I)}
+\author{}
+\date{}
+
+\begin{document}
+\begin{titlepage}
+\centering
+{\Large\textbf{Mawlana Bhashani Science and Technology University}\par}
+\vspace{0.3cm}
+{\large Department of Information and Communication Technology\par}
+\vspace{2cm}
+{\Large Course Code: ICT-3107\par}
+{\Large Course Name: Software Engineering and Project Management\par}
+\vspace{2cm}
+{\huge\bfseries Library Management System\par}
+\vspace{0.4cm}
+{\Large Final Capstone Project Proposal and Prototype (Part I)\par}
+\vfill
+\begin{tabular}{@{}p{0.47\textwidth}p{0.47\textwidth}@{}}
+\textbf{Submitted by:} & \textbf{Supervised by:}\\[4pt]
+Shayla Akter & Professor Dr. Ziaur Rahman\\
+ID: IT24022 & Department of ICT\\
+Department of ICT, MBSTU & Mawlana Bhashani Science and Technology University
+\end{tabular}
+\vspace{1.5cm}
+
+Date of Submission: October 28, 2026
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Libraries still keep many records on paper or in spreadsheets. This makes searching for books slow, makes it hard to know who holds which book, and leads to lost records and uncollected fines. The \textbf{Library Management System (LMS)} is a desktop application written in Java that automates the daily work of a small library: cataloguing books, registering members, issuing and returning books, calculating fines and reporting overdue items.
+
+\subsection{Problem Statement}
+Manual library handling causes (i) slow search of books, (ii) errors in issue and return records, (iii) difficulty in tracking overdue books and calculating fines, and (iv) no quick reports for the administrator. A simple, reliable, computerized system is needed.
+
+\subsection{Objectives}
+\begin{itemize}[nosep]
+\item Store and manage book, member and issue data in one place.
+\item Let librarians issue and return books in a few clicks.
+\item Calculate late-return fines automatically.
+\item Provide fast search by title, author or category.
+\item Provide role-based login for Admin and Librarian.
+\item Generate an overdue-books report.
+\end{itemize}
+
+\subsection{Scope}
+\textbf{In scope:} login with roles, book management, member registration, issue/return, fine calculation, search, overdue report, file-based data storage.\\
+\textbf{Out of scope (future work):} online member portal, barcode/RFID scanning, e-mail/SMS reminders, online payment of fines.
+
+\section{Requirements}
+\subsection{Functional Requirements}
+\begin{longtable}{@{}l p{0.82\textwidth}@{}}
+\toprule ID & Requirement \\ \midrule \endhead
+FR1 & The system shall allow Admin and Librarian to log in with a username and password. \\
+FR2 & The system shall allow adding books and (Admin only) deleting books. \\
+FR3 & The system shall search books by title, author or category. \\
+FR4 & The system shall register new members. \\
+FR5 & The system shall issue a book to a member if a copy is available and the member has fewer than 3 active loans. \\
+FR6 & The system shall set the due date 14 days after the issue date. \\
+FR7 & The system shall record a return and calculate a fine of Tk 5 per late day. \\
+FR8 & The system shall list overdue books with the fine accumulated so far. \\
+FR9 & The system shall save all data permanently and reload it at start-up. \\ \bottomrule
+\end{longtable}
+\subsection{Non-Functional Requirements}
+\textbf{Usability:} simple tabbed interface. \textbf{Reliability:} data saved after every change. \textbf{Portability:} runs on any system with Java 17 or later. \textbf{Maintainability:} separate classes for data, logic and interface. \textbf{Performance:} search and issue operations complete in under one second for up to 10{,}000 records.
+
+\subsection{Feasibility Study}
+\textbf{Technical:} Java and Swing are free and well known. \textbf{Economic:} no cost, only open-source tools. \textbf{Operational:} the interface is simple enough for library staff with minimal training. \textbf{Schedule:} the 12-week plan in Section~\ref{sec:schedule} is realistic for one student.
+
+\section{Software Process Model}
+We use the \textbf{Agile (Scrum-based incremental) model}. The project is divided into four sprints of about two to three weeks. Each sprint ends with a working increment that is reviewed and improved. This suits a single-student project because requirements can be refined as the prototype grows, and risk is reduced by testing early.
+
+\begin{table}[H]\centering\begin{tabular}{@{}lll@{}}\toprule Sprint & Focus & Increment delivered \\ \midrule
+Sprint 0 & Planning and analysis & Proposal, requirements, UML diagrams \\
+Sprint 1 & Core data and login & Classes, storage, login screen \\
+Sprint 2 & Books and members & Add/search/delete books, register members \\
+Sprint 3 & Issue/return and fines & Issue, return, fine calculation, overdue report \\
+Sprint 4 & Testing and delivery & Bug fixes, final report, GitHub release \\ \bottomrule\end{tabular}\caption{Sprint plan}\end{table}
+
+\section{Project Schedule, Milestones and Deliverables}\label{sec:schedule}
+\subsection{Milestones and Deliverables}
+\begin{table}[H]\centering\small\begin{tabular}{@{}llp{0.5\textwidth}@{}}\toprule Milestone & Week & Deliverable \\ \midrule
+M1 Requirements approved & 2 & Proposal and requirement list \\
+M2 Design completed & 3 & DFD, use case, activity, ERD, class and object diagrams \\
+M3 Prototype v0.1 & 5 & Login screen and data storage working \\
+M4 Prototype v0.5 & 8 & Book and member modules working \\
+M5 Prototype v1.0 & 10 & Issue, return, fine and report modules \\
+M6 Final release & 12 & Tested system, final report, GitHub repository \\ \bottomrule\end{tabular}\caption{Milestones}\end{table}
+
+\subsection{Gantt Chart}
+\begin{figure}[H]\centering
+\resizebox{\textwidth}{!}{%
+\begin{ganttchart}[hgrid,vgrid={*{11}{draw=none},dotted},x unit=0.55cm,y unit chart=0.62cm,title height=1,bar/.append style={fill=blue!55},milestone/.append style={fill=red!70}]{1}{12}
+\gantttitle{Weeks}{12}\\
+\gantttitlelist{1,...,12}{1}\\
+\ganttbar{Requirement analysis}{1}{2}\\
+\ganttbar{UML and database design}{2}{3}\\
+\ganttbar{Sprint 1: core and login}{4}{5}\\
+\ganttbar{Sprint 2: books and members}{6}{8}\\
+\ganttbar{Sprint 3: issue, return, fine}{8}{10}\\
+\ganttbar{Testing and bug fixing}{10}{11}\\
+\ganttbar{Report and documentation}{11}{12}\\
+\ganttbar{GitHub release}{12}{12}\\
+\ganttmilestone{Milestones M1--M6}{2}\ganttmilestone{}{3}\ganttmilestone{}{5}\ganttmilestone{}{8}\ganttmilestone{}{10}\ganttmilestone{}{12}
+\end{ganttchart}}
+\caption{Project Gantt chart (12 weeks)}\end{figure}
+
+\subsection{Risks}
+\begin{table}[H]\centering\small\begin{tabular}{@{}p{0.35\textwidth}p{0.55\textwidth}@{}}\toprule Risk & Mitigation \\ \midrule
+Data file damaged or lost & Save after every change; keep backups in GitHub \\
+Time shortage & Build the core features first; extras last \\
+Bugs in fine or date logic & Test with different issue/return dates \\
+Interface not user friendly & Keep layout simple; collect feedback each sprint \\ \bottomrule\end{tabular}\caption{Risk plan}\end{table}
+
+\section{System Analysis and Design (UML)}
+\subsection{Data Flow Diagram}
+Figure~\ref{fig:dfd0} shows the context diagram (Level 0) and Figure~\ref{fig:dfd1} the Level 1 DFD.
+\fig{dfd0.pdf}{0.9\textwidth}{DFD Level 0 (context diagram)}\label{fig:dfd0}
+\fig{dfd1.pdf}{\textwidth}{DFD Level 1}\label{fig:dfd1}
+
+\subsection{Use Case Diagram}
+Actors are Admin, Librarian and Member. Returning a book includes fine calculation.
+\fig{usecase.pdf}{0.85\textwidth}{Use case diagram}
+
+\subsection{Activity Diagram}
+The activity diagram shows the issue and return workflow.
+\fig{activity.pdf}{0.75\textwidth}{Activity diagram: issue and return book}
+
+\subsection{Entity Relationship Diagram}
+\fig{erd.pdf}{0.95\textwidth}{Entity relationship diagram}
+\begin{table}[H]\centering\small\begin{tabular}{@{}ll@{}}\toprule Relationship & Cardinality \\ \midrule
+Category -- Book & One category has many books \\
+Member -- IssueRecord & One member borrows many times \\
+Book -- IssueRecord & One book is issued many times \\
+User -- IssueRecord & One staff user handles many issues \\ \bottomrule\end{tabular}\caption{ERD relationships}\end{table}
+
+\subsection{Class Diagram}
+The prototype implements all of these classes: \texttt{User}, \texttt{Book}, \texttt{Member}, \texttt{IssueRecord}, \texttt{Fine}, \texttt{LibraryService}, \texttt{LoginFrame}, \texttt{MainFrame} and \texttt{Main}.
+\fig{classdiagram.pdf}{0.8\textwidth}{Class diagram}
+
+\subsection{Object Diagram}
+\fig{objectdiagram.pdf}{\textwidth}{Object diagram: a late return with a 3-day fine}
+
+\section{Prototype Implementation}
+The prototype is a working Java Swing application with the following structure.
+\begin{lstlisting}
+LibraryManagementSystem/
+  src/library/
+    Main.java            (entry point)
+    LoginFrame.java      (login screen)
+    MainFrame.java       (tabs: Books, Members, Issue/Return, Overdue)
+    LibraryService.java  (business logic + CSV storage)
+    User.java  Book.java  Member.java  IssueRecord.java  Fine.java
+  data/                  (CSV files created automatically)
+  docs/diagrams/         (Graphviz sources of all diagrams)
+  report/                (this LaTeX proposal)
+\end{lstlisting}
+\textbf{Technology:} Java 17+, Swing, CSV file storage, IntelliJ IDEA, Git/GitHub, \LaTeX.\\
+\textbf{Classes used from the class diagram (9 classes, minimum required is 5):} \texttt{User}, \texttt{Book}, \texttt{Member}, \texttt{IssueRecord}, \texttt{Fine}, \texttt{LibraryService}, \texttt{LoginFrame}, \texttt{MainFrame}, \texttt{Main}.
+
+\textbf{Features in the prototype:} login for Admin and Librarian (demo accounts: \texttt{admin} / \texttt{admin123} and \texttt{librarian} / \texttt{lib123}); add, search and delete books; register members; issue book with a 14-day due date and a 3-book limit; return book with automatic fine (Tk 5 per day); overdue report; automatic saving to files.
+
+\subsection{Screenshots}
+% Replace these with your own screenshots after running the program:
+% \fig{screenshots/login.png}{0.5\textwidth}{Login screen}
+% \fig{screenshots/books.png}{0.9\textwidth}{Books tab}
+% \fig{screenshots/issue.png}{0.9\textwidth}{Issue / Return tab}
+
+\subsection{Test Cases}
+\begin{table}[H]\centering\small\begin{tabular}{@{}llp{0.3\textwidth}l@{}}\toprule No. & Test & Expected result & Status \\ \midrule
+T1 & Login with wrong password & Error message shown & Pass \\
+T2 & Issue book with no copies left & ``No copies available'' & Pass \\
+T3 & Issue to unknown member & ``Member not found'' & Pass \\
+T4 & Return book 3 days late & Fine = Tk 15 & Pass \\
+T5 & Return an already returned record & Rejected & Pass \\
+T6 & Delete a book that is on loan & Not allowed & Pass \\
+T7 & Close and reopen program & All data reloaded & Pass \\ \bottomrule\end{tabular}\caption{Test cases}\end{table}
+
+\section{Conclusion and Future Work}
+The Library Management System gives a small library a simple, reliable way to manage books, members, loans and fines. The plan, diagrams and working prototype in this proposal show that the project is complete in scope and can be finished in the given time. Future work includes a database (SQLite/MySQL), a member web portal, barcode scanning and e-mail reminders.
+
+\begin{thebibliography}{9}
+\bibitem{sommerville} I. Sommerville, \textit{Software Engineering}, 10th ed., Pearson, 2016.
+\bibitem{pressman} R. S. Pressman, \textit{Software Engineering: A Practitioner's Approach}, 8th ed., McGraw-Hill, 2014.
+\bibitem{fowler} M. Fowler, \textit{UML Distilled}, 3rd ed., Addison-Wesley, 2003.
+\bibitem{oracle} Oracle, \textit{Java Swing Tutorial}, \url{https://docs.oracle.com/javase/tutorial/uiswing/}.
+\bibitem{scrum} K. Schwaber and J. Sutherland, \textit{The Scrum Guide}, 2020.
+\end{thebibliography}
+\end{document}

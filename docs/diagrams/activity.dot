@@ -1,0 +1,11 @@
+digraph G { node [fontname="Helvetica",fontsize=10,shape=box,style="rounded,filled",fillcolor="#e0f2fe"]; edge [fontname="Helvetica",fontsize=9];
+ s [label="",shape=circle,width=0.2,style=filled,fillcolor=black]; e [label="",shape=doublecircle,width=0.2,style=filled,fillcolor=black];
+ a1 [label="Librarian logs in"]; a2 [label="Enter Book ID and Member ID"];
+ d1 [label="Book available and\nmember valid?",shape=diamond,style=filled,fillcolor="#fef3c7"];
+ a3 [label="Show error message"]; d2 [label="Member has\n< 3 books?",shape=diamond,style=filled,fillcolor="#fef3c7"];
+ a4 [label="Create issue record\n(due = today + 14 days)"]; a5 [label="Reduce available copies"]; a6 [label="Save data"];
+ a7 [label="Later: enter Record ID to return"]; d3 [label="Returned after\ndue date?",shape=diamond,style=filled,fillcolor="#fef3c7"];
+ a8 [label="Fine = days late x Tk 5"]; a9 [label="No fine"]; a10 [label="Increase available copies,\nsave data"];
+ s->a1->a2->d1; d1->a3 [label="No"]; a3->e; d1->d2 [label="Yes"]; d2->a3 [label="No"]; d2->a4 [label="Yes"];
+ a4->a5->a6->a7->d3; d3->a8 [label="Yes"]; d3->a9 [label="No"]; a8->a10; a9->a10; a10->e;
+}
