@@ -1,9 +1,0 @@
-digraph G { rankdir=LR; node [shape=record,fontname="Helvetica",fontsize=10,style=filled,fillcolor="#e0f2fe"]; edge [fontname="Helvetica",fontsize=9];
- svc [label="{svc : LibraryService|}",fillcolor="#fef3c7"];
- u [label="{admin : User|username = \"admin\"\lrole = ADMIN\l}"];
- b1 [label="{b1 : Book|id = 1\ltitle = \"Clean Code\"\lauthor = \"Robert C. Martin\"\lavailableCopies = 2\l}"];
- m1 [label="{m1 : Member|id = 1\lname = \"Rahim Uddin\"\lphone = \"01700000001\"\l}"];
- r1 [label="{r1 : IssueRecord|id = 1\lissueDate = 2026-10-01\ldueDate = 2026-10-15\lreturnDate = 2026-10-18\lfineAmount = 15.0\l}"];
- f1 [label="{f1 : Fine|daysLate = 3\lamount = 15.0\l}"];
- svc -> u; svc -> b1; svc -> m1; svc -> r1; r1 -> b1 [label="book"]; r1 -> m1 [label="member"]; r1 -> f1 [label="fine"];
-}
