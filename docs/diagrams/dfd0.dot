@@ -1,7 +1,0 @@
-digraph G { rankdir=LR; node [fontname="Helvetica",fontsize=11]; edge [fontname="Helvetica",fontsize=9];
- sys [label="0\nLibrary Management\nSystem",shape=circle,style=filled,fillcolor="#dbeafe",width=1.8];
- admin [label="Admin",shape=box]; lib [label="Librarian",shape=box]; mem [label="Member",shape=box];
- admin -> sys [label="login, manage users,\nbook data"]; sys -> admin [label="reports"];
- lib -> sys [label="issue / return requests,\nmember data"]; sys -> lib [label="confirmation,\nfine details"];
- mem -> sys [label="registration details,\nsearch query"]; sys -> mem [label="search results,\ndue date"];
-}
