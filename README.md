@@ -24,7 +24,27 @@ java -cp out library.Main
 |---|---|
 | `src/library` | Java source: User, Book, Member, IssueRecord, Fine, LibraryService, LoginFrame, MainFrame, Main |
 | `report/main.tex`, `report/main.pdf` | LaTeX proposal (process model, schedule, Gantt chart, UML, tests) |
-| `docs/diagrams` | DFD (level 0 and 1), use case, activity, ERD, class and object diagrams (Graphviz `.dot` + PDF/PNG) |
+| `docs/diagrams` | DFD (level 0 and 1), use case, activity, ERD, class and object diagrams (PDF/PNG) |
 
-## UML diagrams
-DFD, Use Case, Activity, ERD, Class and Object diagrams are in `docs/diagrams` and in the report.
+## UML Diagrams
+
+### 1. Data Flow Diagram (Level 0)
+![DFD Level 0](docs/diagrams/dfd0.png)
+
+### 2. Data Flow Diagram (Level 1)
+![DFD Level 1](docs/diagrams/dfd1.png)
+
+### 3. Use Case Diagram
+![Use Case Diagram](docs/diagrams/usecase.png)
+
+### 4. Activity Diagram
+![Activity Diagram](docs/diagrams/activity.png)
+
+### 5. Entity Relationship Diagram (ERD)
+![ERD](docs/diagrams/erd.png)
+
+### 6. Class Diagram
+![Class Diagram](docs/diagrams/classdiagram.png)
+
+### 7. Object Diagram
+![Object Diagram](docs/diagrams/objectdiagram.png)
